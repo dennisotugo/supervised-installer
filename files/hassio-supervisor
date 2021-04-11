@@ -21,6 +21,9 @@ runSupervisor() {
         --privileged \
         --security-opt apparmor=hassio-supervisor \
         --security-opt seccomp=unconfined \
+        --net=host \
+        --pid=host \
+        --ipc=host \
         -v /run/docker.sock:/run/docker.sock:rw \
         -v /run/dbus:/run/dbus:ro \
         -v /run/udev:/run/udev:ro \
